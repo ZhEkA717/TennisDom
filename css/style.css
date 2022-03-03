@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("/imgs/fonBody.jpg");
+    background-image: url("//imgs/fonBody.jpg");
 }
 .container{
     position: relative;
@@ -45,7 +45,7 @@ body{
 }
 
 .field{
-    background-image: url('/imgs/field.jpg');
+    background-image: url('//imgs/field.jpg');
     width: 650px;
     height: 350px;
     margin: 0 auto;

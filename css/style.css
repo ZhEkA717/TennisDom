@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("//imgs/fonBody.jpg");
+    background-image: url("../imgs/fonBody.jpg");
 }
 .container{
     position: relative;
@@ -45,7 +45,7 @@ body{
 }
 
 .field{
-    background-image: url('//imgs/field.jpg');
+    background-image: url('../imgs/field.jpg');
     width: 650px;
     height: 350px;
     margin: 0 auto;
@@ -61,10 +61,10 @@ body{
     outline: 2px solid black;
 }
 .leftRacket{
-    background-image: url(/imgs/leftR.jfif);
+    background-image: url("../imgs/leftR.jfif");
 }
 .rightRacket{
-    background-image: url(/imgs/rightR.jfif);
+    background-image: url("../imgs/rightR.jfif");
 }
 
 
@@ -95,7 +95,7 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    background-image: url("/imgs/gameover.jpg");
+    background-image: url("../imgs/gameover.jpg");
     width: 250px;
     height: 187px;
     display: none;
@@ -134,7 +134,7 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("/imgs/fon.jpg");
+    background-image: url("../imgs/fon.jpg");
     margin: 0;
     padding: 0;
     padding: 0;

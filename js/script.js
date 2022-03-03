@@ -158,7 +158,6 @@ function funPlayKey(e){
     e.code!="ArrowUp" && e.code!="ArrowDown"){
         funPlay();
     }
-    console.log(e.code);
 }
 
 function funPlay(){

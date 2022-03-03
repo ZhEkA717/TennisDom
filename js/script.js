@@ -300,7 +300,7 @@ setTimeout(() => {
     setTimeout(() => {
         preview.style.display = "none";
     }, 1500)
-}, 1000);
+}, 2000);
 
 });
 

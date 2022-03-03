@@ -1,0 +1,229 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("/imgs/fonBody.jpg");
+}
+.container{
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.button__numbers{
+    display: flex;
+    position: relative;
+    height: 40px;
+}
+
+#play:hover,
+#pause:hover{
+   cursor: pointer;
+}
+#play{
+    position: absolute;
+    left: 10px;
+    top: 0;
+    z-index: 1;
+}
+#pause{
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.numbers{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+
+.field{
+    background-image: url('/imgs/field.jpg');
+    width: 650px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 10px;
+    position: relative;
+    border: 5px solid white;
+}
+
+.leftRacket,.rightRacket{
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    outline: 2px solid black;
+}
+.leftRacket{
+    background-image: url(/imgs/leftR.jfif);
+}
+.rightRacket{
+    background-image: url(/imgs/rightR.jfif);
+}
+
+
+.ball{
+    position: absolute;
+    left: 305px;
+    top:155px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+.rotate{
+    animation: ballRotate linear 1s infinite;
+}
+@keyframes ballRotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.hide{
+    display: none;
+}
+.game_over{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url("/imgs/gameover.jpg");
+    width: 250px;
+    height: 187px;
+    display: none;
+}
+
+.game_over div:first-child{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    font-weight:800;
+    font-family: Mistral;
+}
+#close{
+    position: absolute;
+    left: 220px;
+    top: 10px;
+}
+#close:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.game_over div:last-child{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    font-weight:800;
+    font-family: Mistral;
+}
+
+#preview{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("/imgs/fon.jpg");
+    margin: 0;
+    padding: 0;
+    padding: 0;
+    z-index: 100;
+    transition-duration: 2s;
+}
+#preview div:first-child{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    font-family: Mistral;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 10px;
+    word-spacing: 10px;
+}
+#preview div:last-child{
+    position: absolute;
+    left: 50%;
+    top:60%;
+    transform: translate(-50%,-50%);
+
+}
+#preview div:last-child .loading{
+    animation: ballRotate linear 1s infinite;
+}
+@keyframes loadingRotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+#countDown{
+    position: absolute;
+    left:50%;
+    top: 120%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 130px;
+    font-weight: 700;
+    font-family: mistral;
+    transition-duration: 1s;
+    z-index: 2;
+}
+
+#leftInf,#rightInf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    text-align: center;
+}
+#leftInf{
+    position: absolute;
+    left: 10px;
+    top: 180px;
+}
+#rightInf{
+    position: absolute;
+    left: 740px;
+    top: 180px;
+}
+
+#lines div:nth-child(2){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+#lines div:nth-child(2) div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 20px;
+    height: 20px;
+    border: 5px solid white;
+    border-radius: 50%;
+    background-color: white;
+}

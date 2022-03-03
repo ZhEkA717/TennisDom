@@ -154,14 +154,15 @@ const countDown = document.getElementById('countDown');
 btnPlay.addEventListener('click', funPlay);
 document.addEventListener('keydown', funPlayKey);
 function funPlayKey(e){
-    if(e.code === "Enter"){
+    if(e.code != "ShiftLeft" && e.code!="ControlLeft" &&
+    e.code!="ArrowUp" && e.code!="ArrowDown"){
         funPlay();
     }
+    console.log(e.code);
 }
 
 function funPlay(){
     if (count == 0) {
-        btnPlay.style.display = "none";
         let sec = 3;
         countDown.style.opacity = 1;
         function funCountDown() {
@@ -198,23 +199,19 @@ function funPlay(){
 
 
 
-
+let count1=0;
 function tick() {
     const timerId = requestAnimationFrame(tick);
 
     btnPause.addEventListener('click', funPause);
-    document.addEventListener('keydown', funPauseKey);
-    function funPauseKey(e){
-        if(e.code === "Escape"){
-            funPause();
-        }
-        
-    }
+    count1=0;
     function funPause() {
-        cancelAnimationFrame(timerId);
-        count = 0;
-        ball.classList.remove('rotate');
-        btnPlay.style.display = "block"
+        if(count1 == 0){
+            cancelAnimationFrame(timerId);
+            count = 0;
+            ball.classList.remove('rotate');
+        }
+       count1=1;
     }
     ballParam.posX += ballParam.speedX;
     ballParam.posY += ballParam.speedY;
@@ -232,7 +229,6 @@ function tick() {
         cancelAnimationFrame(timerId);
         count = 0;
         ball.classList.remove('rotate');
-        btnPlay.style.display = "block"
         field.style.borderRight= "5px solid red";
 
     }
@@ -249,7 +245,6 @@ function tick() {
         cancelAnimationFrame(timerId);
         count = 0;
         ball.classList.remove('rotate');
-        btnPlay.style.display = "block"
         field.style.borderLeft= "5px solid red";
     }
     // вылетел ли мяч выше потолка?
@@ -267,13 +262,23 @@ function tick() {
         count = 1;
         if (scope1 < scope2) {
             gameOver.style.display = "block";
-            whoWin.innerHTML = "Left Win!"
+            whoWin.innerHTML = "Left Win!";
+            cancelAnimationFrame(timerId);
+            count = 0;
+            btnPlay.removeEventListener('click', funPlay);
+            document.removeEventListener('keydown', funPlayKey);
+            ball.classList.remove('rotate');
             close.addEventListener('click', function () {
                 location.reload();
             });
         } else if (scope2 < scope1) {
             gameOver.style.display = "block";
-            whoWin.innerHTML = "Right Win!"
+            whoWin.innerHTML = "Right Win!";
+            cancelAnimationFrame(timerId);
+            count = 0;
+            btnPlay.removeEventListener('click', funPlay);
+            document.removeEventListener('keydown', funPlayKey);
+            ball.classList.remove('rotate');
             close.addEventListener('click', function () {
                 location.reload();
             });

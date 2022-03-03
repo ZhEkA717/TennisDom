@@ -19,16 +19,18 @@ body{
 #play:hover,
 #pause:hover{
    cursor: pointer;
+   transform: scale(1.1);
+   opacity: 0.8;
 }
 #play{
     position: absolute;
-    left: 10px;
+    left: 80px;
     top: 0;
     z-index: 1;
 }
 #pause{
     position: absolute;
-    left: 10px;
+    left: 680px;
     top: 0;
 }
 
@@ -97,6 +99,7 @@ body{
     width: 250px;
     height: 187px;
     display: none;
+    z-index: 3;
 }
 
 .game_over div:first-child{
